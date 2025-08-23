@@ -1,0 +1,40 @@
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.material-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.material-form label {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.material-form input,
+.material-form textarea {
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.material-form button {
+  margin-top: 20px;
+  padding: 10px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.material-form button:hover {
+  background: #145a9e;
+}
