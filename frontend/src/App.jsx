@@ -79,7 +79,7 @@ export default function App() {
 
       const data = await res.json();
       console.log("✅ Saved:", data);
-      alert("Material saved successfully!");
+      alert("Materials_entry saved successfully!");
     } catch (err) {
       console.error("❌ Save failed:", err);
       alert("Save failed: " + err.message);
