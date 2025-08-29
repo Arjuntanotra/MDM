@@ -1,18 +1,26 @@
 import express from "express";
-import bodyParser from "body-parser";
+import cors from "cors";
 import sequelize from "./db.js";
 import apiRoutes from "./routes/api.js";
+import authRoutes from "./routes/auth.js";
 
 const app = express();
-const PORT = 5000;
+app.use(cors());
+app.use(express.json());
 
-app.use(bodyParser.json());
+// ✅ Auth endpoints -> /api/auth/...
+app.use("/api/auth", authRoutes);
 
-// 👇 Mount routes
-app.use("/", apiRoutes);
+// ✅ Material endpoints -> /api/materials
+app.use("/api", apiRoutes);
 
+// DB connect
 sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(`✅ Server running at http://localhost:${PORT}`);
-  });
+  console.log("✅ Database synced");
+});
+
+// Start server
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
